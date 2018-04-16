@@ -15,6 +15,7 @@ import com.beini.authorization.annotation.Authorization;
 import com.beini.config.Constants;
 import com.beini.domain.User;
 import com.beini.service.UserService;
+import com.google.gson.Gson;
 
 import io.swagger.annotations.ApiOperation;
 
@@ -25,18 +26,21 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
+	@Authorization
 	@ApiOperation(value = "获取全部用户")
 	@GetMapping("getPage")
-	public Page<User> getPage() {
+	public Page<User> getPage(@RequestHeader(name = Constants.AUTHORIZATION, required = true, defaultValue = "") String authorization) {
 		Pageable pageable = new PageRequest(0, 5);
 		return userService.findAll(pageable);
 	}
-	
-	@Authorization
+
 	@ApiOperation(value = "获取具体用户")
 	@GetMapping("getOne")
-	public User getOne(@RequestHeader(name=Constants.AUTHORIZATION,required=true,defaultValue="")String authorization,String id) {
-		LOG.error("user Id :"+id);
-		return userService.findOne(id);
+	public String getOne(
+			//@RequestHeader(name = Constants.AUTHORIZATION, required = true, defaultValue = "") String authorization,
+			String id) {
+		LOG.error("user Id :" + id);
+		User user = userService.findOne(id);
+		return new Gson().toJson(user);
 	}
 }
