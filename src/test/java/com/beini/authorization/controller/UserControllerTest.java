@@ -1,4 +1,4 @@
-package com.beini.controller;
+package com.beini.authorization.controller;
 
 import java.io.IOException;
 

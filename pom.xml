@@ -3,16 +3,16 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.beini</groupId>
-	<artifactId>spring-cloud-eureka-client-authorization</artifactId>
+	<artifactId>beini-authorization</artifactId>
 	<version>1.0</version>
 	<packaging>jar</packaging>
 
-	<name>spring-cloud-eureka-client-authorization</name>
+	<name>beini-authorization</name>
 	<!--继承spring-boot -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.10.RELEASE</version>
+		<version>1.5.9.RELEASE</version>
 	</parent>
 	<dependencyManagement>  
     <dependencies>  
