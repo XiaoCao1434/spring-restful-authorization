@@ -1,9 +1,9 @@
-create table user_ (
-  username_ varchar(20) unique not null,
-  password_ varchar(20) not null,
-  id_ int unsigned auto_increment,
-  nickname_ varchar(20) not null,
-  primary key(id_)
+create table `user` (
+  username varchar(20) unique not null,
+  password varchar(20) not null,
+  id varchar(20),
+  nickname varchar(20) not null,
+  primary key(id)
 );
 
-insert into user_ (username_, password_, nickname_) values ('admin', 'password', 'admin' );
+insert into `user` (username, password, nickname,id) values ('admin', 'password', 'admin','23');
