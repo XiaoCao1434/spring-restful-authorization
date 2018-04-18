@@ -19,11 +19,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 //@EnableEurekaClient
 @EnableDiscoveryClient
 public class Application {
-
 	public static void main(String[] args) {
-		/* 简单启动spring boot的main方法 */
-		// SpringApplication.run(Application.class,args);
-
 		SpringApplication app = new SpringApplication(Application.class);
 		app.setBannerMode(Mode.OFF);
 		app.run(args);
