@@ -10,13 +10,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Spring-Boot启动类
- * 
  * @author lb_chen
  */
 @EnableCaching
 @EnableSwagger2
 @SpringBootApplication
-//@EnableEurekaClient
 @EnableDiscoveryClient
 public class Application {
 	public static void main(String[] args) {
