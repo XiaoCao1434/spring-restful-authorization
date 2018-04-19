@@ -1,9 +1,9 @@
 package com.beini.authorization.resolvers;
 
 import com.beini.authorization.annotation.CurrentUser;
-import com.beini.config.Constants;
-import com.beini.domain.User;
-import com.beini.repository.UserRepository;
+import com.beini.authorization.config.Constants;
+import com.beini.authorization.model.User;
+import com.beini.authorization.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;

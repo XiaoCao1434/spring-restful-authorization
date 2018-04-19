@@ -1,4 +1,4 @@
-package com.beini.config;
+package com.beini.authorization.config;
 
 import com.beini.authorization.interceptor.AuthorizationInterceptor;
 import com.beini.authorization.resolvers.CurrentUserMethodArgumentResolver;

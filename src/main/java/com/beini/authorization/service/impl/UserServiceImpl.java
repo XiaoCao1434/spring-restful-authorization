@@ -1,13 +1,13 @@
-package com.beini.service.impl;
+package com.beini.authorization.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.beini.domain.User;
-import com.beini.repository.UserRepository;
-import com.beini.service.UserService;
+import com.beini.authorization.model.User;
+import com.beini.authorization.repository.UserRepository;
+import com.beini.authorization.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {

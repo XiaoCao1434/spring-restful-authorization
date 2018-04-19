@@ -11,9 +11,9 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.beini.authorization.annotation.Authorization;
+import com.beini.authorization.config.Constants;
 import com.beini.authorization.manager.TokenManager;
 import com.beini.authorization.model.TokenModel;
-import com.beini.config.Constants;
 
 /**
  * 自定义拦截器，判断此次请求是否有权限

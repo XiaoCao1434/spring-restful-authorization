@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
+import com.beini.authorization.config.Constants;
 import com.beini.authorization.manager.TokenManager;
 import com.beini.authorization.model.TokenModel;
-import com.beini.config.Constants;
 
 /**
  * 通过Redis存储和验证token的实现类

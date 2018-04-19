@@ -1,4 +1,4 @@
-package com.beini.domain;
+package com.beini.authorization.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

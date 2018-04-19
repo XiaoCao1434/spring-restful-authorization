@@ -1,9 +1,9 @@
-package com.beini.service;
+package com.beini.authorization.service;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import com.beini.domain.User;
+import com.beini.authorization.model.User;
 
 public interface UserService {
 	User findByUsername(String name);

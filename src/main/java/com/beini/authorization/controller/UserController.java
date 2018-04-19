@@ -1,4 +1,4 @@
-package com.beini.controller;
+package com.beini.authorization.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.beini.authorization.annotation.Authorization;
-import com.beini.config.Constants;
-import com.beini.domain.User;
-import com.beini.service.UserService;
+import com.beini.authorization.config.Constants;
+import com.beini.authorization.model.User;
+import com.beini.authorization.service.UserService;
 import com.google.gson.Gson;
 
 import io.swagger.annotations.ApiOperation;

@@ -1,4 +1,4 @@
-package com.beini.config;
+package com.beini.authorization.config;
 
 /**
  * 自定义请求状态码

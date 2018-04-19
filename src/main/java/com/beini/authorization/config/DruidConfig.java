@@ -1,4 +1,4 @@
-package com.beini.config;
+package com.beini.authorization.config;
 
 
 import java.sql.SQLException;
