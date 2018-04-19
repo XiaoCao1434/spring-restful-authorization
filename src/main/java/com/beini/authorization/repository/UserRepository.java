@@ -1,9 +1,7 @@
 package com.beini.authorization.repository;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import com.beini.authorization.model.User;
@@ -14,11 +12,9 @@ import com.beini.authorization.model.User;
  * @see com.beini.authorization.model.User
  * @author lb_chen
  */
-public interface UserRepository extends CrudRepository<User, String> {
+public interface UserRepository extends JpaRepository<User, String> {
 
 	User findByUsername(String username);
-
-	Page<User> findAll(Pageable pageable);
 
 	@Query("from User where id=:id")
 	User findOne(@Param("id") String id);

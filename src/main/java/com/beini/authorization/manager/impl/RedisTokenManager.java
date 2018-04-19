@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import com.beini.authorization.config.Constants;
 import com.beini.authorization.manager.TokenManager;
 import com.beini.authorization.model.TokenModel;
+import com.beini.core.utils.StringUtil;
 
 /**
  * 通过Redis存储和验证token的实现类
@@ -28,6 +29,7 @@ public class RedisTokenManager implements TokenManager {
 	/**
 	 * 	创建token
 	 */
+	@Override
 	public TokenModel createToken(String userId) {
 		// 使用uuid作为源token
 		String token = UUID.randomUUID().toString().replace("-", "");
@@ -39,12 +41,13 @@ public class RedisTokenManager implements TokenManager {
 	/**
 	 * 获取token
 	 */
+	@Override
 	public TokenModel getToken(String authentication) {
 		if (authentication == null ||"".equals(authentication)|| authentication.length() == 0) {
 			return null;
 		}
 		String[] param = authentication.split("_");
-		if (param.length != 2) {
+		if (param.length != StringUtil.CHAR_INT_TWO) {
 			return null;
 		}
 		// 使用userId和源token简单拼接成的token，可以增加加密措施
@@ -54,6 +57,7 @@ public class RedisTokenManager implements TokenManager {
 	/**
 	 * 检查token
 	 */
+	@Override
 	public boolean checkToken(TokenModel model) {
 		if (model == null) {
 			return false;
@@ -69,6 +73,7 @@ public class RedisTokenManager implements TokenManager {
 	/**
 	 * 删除token
 	 */
+	@Override
 	public void deleteToken(String userId) {
 		redis.delete(userId);
 	}
