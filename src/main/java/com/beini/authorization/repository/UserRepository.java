@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.beini.authorization.model.User;
+import com.beini.authorization.entity.UserInfo;
 
 /**
  * User类的CRUD操作
@@ -12,11 +12,11 @@ import com.beini.authorization.model.User;
  * @see com.beini.authorization.model.User
  * @author lb_chen
  */
-public interface UserRepository extends JpaRepository<User, String> {
+public interface UserRepository extends JpaRepository<UserInfo, String> {
 
-	User findByUsername(String username);
+	UserInfo findByUsername(String username);
 
-	@Query("from User where id=:id")
-	User findOne(@Param("id") String id);
+	@Query("from UserInfo where id=:id")
+	UserInfo findOne(@Param("id") String id);
 
 }

@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.beini.authorization.annotation.Authorization;
+import com.beini.authorization.entity.UserInfo;
 import com.beini.authorization.manager.TokenManager;
 import com.beini.authorization.model.TokenModel;
-import com.beini.authorization.model.User;
 import com.beini.authorization.service.UserService;
 import com.beini.core.enums.ResultEnum;
 import com.beini.core.utils.ResultVOUtil;
@@ -44,11 +44,11 @@ public class TokenController {
 		Assert.notNull(username, "username can not be empty");
 		Assert.notNull(password, "password can not be empty");
 
-		User user = userService.findByUsername(username);
+		UserInfo user = userService.findByUsername(username);
 		if (/* 未注册 */
 			user == null  || 
 			/* 密码错误 */
-			!user.getPassword().equals(password)) {
+			!user.getUserPassword().equals(password)) {
 			/* 提示用户名或密码错误 */
 			return new ResponseEntity<>(ResultVOUtil.error(ResultEnum.USERNAME_OR_PASSWORD_ERROR),
 					HttpStatus.NOT_FOUND);

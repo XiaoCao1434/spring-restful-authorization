@@ -3,11 +3,11 @@ package com.beini.authorization.service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import com.beini.authorization.model.User;
+import com.beini.authorization.entity.UserInfo;
 
 public interface UserService {
-	User findByUsername(String name);
-	Page<User> findAll(Pageable pageable);
-	User save(User user);
-	User findOne(String id);
+	UserInfo findByUsername(String name);
+	Page<UserInfo> findAll(Pageable pageable);
+	UserInfo save(UserInfo user);
+	UserInfo findOne(String id);
 }

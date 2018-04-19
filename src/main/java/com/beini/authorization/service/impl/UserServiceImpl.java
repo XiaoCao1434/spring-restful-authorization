@@ -5,7 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.beini.authorization.model.User;
+import com.beini.authorization.entity.UserInfo;
 import com.beini.authorization.repository.UserRepository;
 import com.beini.authorization.service.UserService;
 
@@ -15,22 +15,22 @@ public class UserServiceImpl implements UserService {
 	private UserRepository userRepository;
 
 	@Override
-	public User findByUsername(String name) {
+	public UserInfo findByUsername(String name) {
 		return userRepository.findByUsername(name);
 	}
 
 	@Override
-	public Page<User> findAll(Pageable pageable) {
+	public Page<UserInfo> findAll(Pageable pageable) {
 		return userRepository.findAll(pageable);
 	}
 
 	@Override
-	public User save(User user) {
+	public UserInfo save(UserInfo user) {
 		return userRepository.save(user);
 	}
 
 	@Override
-	public User findOne(String id) {
+	public UserInfo findOne(String id) {
 		return userRepository.findOne(id);
 	}
 

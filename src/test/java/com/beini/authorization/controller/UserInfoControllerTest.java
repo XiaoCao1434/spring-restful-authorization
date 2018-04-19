@@ -10,7 +10,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.junit.Test;
 
-public class UserControllerTest {
+public class UserInfoControllerTest {
 	@Test
 	public void testGetOne() {
 		CloseableHttpClient httpCilent2 = HttpClients.createDefault();
